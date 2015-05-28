@@ -29,7 +29,8 @@
 
         <activity
             android:name=".StartActivity"
-            android:label="@string/title_activity_start" >
+            android:label="@string/title_activity_start"
+            android:theme="@style/Theme.AppCompat"  >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -38,7 +39,7 @@
         </activity>
 
         <service
-            android:name=".SunsetService"
+            android:name=".SunDataService"
             android:enabled="true"
             android:exported="true" >
         </service>
