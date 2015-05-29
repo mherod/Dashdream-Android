@@ -1,8 +1,10 @@
-package co.herod.dashdream.sunrisesunset;
+package co.herod.dashdream.rest;
 
 import com.google.gson.annotations.Expose;
 
 import org.parceler.Parcel;
+
+// generated with http://www.jsonschema2pojo.org
 
 @Parcel
 public class SunApiResponse {

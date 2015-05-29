@@ -3,21 +3,26 @@ package co.herod.dashdream;
 import android.app.Service;
 import android.content.Context;
 import android.content.Intent;
+import android.location.Criteria;
+import android.location.Location;
+import android.location.LocationListener;
+import android.location.LocationManager;
 import android.os.Binder;
+import android.os.Bundle;
 import android.os.IBinder;
 import android.util.Log;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
-import co.herod.dashdream.sunrisesunset.Results;
-import co.herod.dashdream.sunrisesunset.SunApiResponse;
+import co.herod.dashdream.rest.Results;
+import co.herod.dashdream.rest.SunApiResponse;
 import retrofit.RestAdapter;
 import retrofit.converter.GsonConverter;
 import retrofit.http.GET;
 import retrofit.http.Query;
 
-public class SunDataService extends Service implements Runnable {
+public class SunDataService extends Service implements Runnable, LocationListener, SunDataProvider {
 
     public static final String TAG = SunDataService.class.getSimpleName();
     public static final String ME = SunDataService.class.getName();
@@ -35,17 +40,34 @@ public class SunDataService extends Service implements Runnable {
 
     private final Thread thread = new Thread(this);
 
-    private SunRestClient sunRestClient = new SunRestClient();
+    private final SunRestClient sunRestClient = new SunRestClient();
+
+    private LocationManager locationManager;
+
+    private String locationProvider;
+
+    private Location currentLocation = null;
 
     private boolean serviceActive = true;
 
-    private boolean requestSunDataRefresh = false;
+    private boolean requestSunDataRefresh = true;
+
+    private String sunriseTime = null;
+    private String sunsetTime = null;
 
     public SunDataService() {
     }
 
     @Override
     public void onCreate() {
+
+        locationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
+
+        selectBestLocationProvider();
+
+        currentLocation = locationManager.getLastKnownLocation(locationProvider);
+        locationManager.requestLocationUpdates(locationProvider, 2000, 10, this);
+
         thread.start();
     }
 
@@ -69,19 +91,22 @@ public class SunDataService extends Service implements Runnable {
     @Override
     public void run() {
         while (serviceActive && !thread.isInterrupted()) {
-            if (requestSunDataRefresh) {
+            if (requestSunDataRefresh && currentLocation != null) {
                 requestSunDataRefresh = false;
 
                 // refresh
 
+                String lat = String.valueOf(currentLocation.getLatitude());
+                String lng = String.valueOf(currentLocation.getLongitude());
+
                 Results sunResults = sunRestClient.getSunApiService()
-                        .getSunData("36.7201600", "-4.4203400", "today")
+                        .getSunData(lat, lng, "today")
                         .getResults();
 
-                String sunrise = sunResults.getSunrise();
-                String sunset = sunResults.getSunset();
+                sunriseTime = sunResults.getSunrise();
+                sunsetTime = sunResults.getSunset();
 
-                Log.d(TAG, "GOT DATAAA! " + sunrise + " " + sunset);
+                Log.d(TAG, "Updated sunrise-sunset");
 
                 sendBroadcast(new Intent(BROADCAST_REFRESHED));
             }
@@ -97,10 +122,52 @@ public class SunDataService extends Service implements Runnable {
     }
 
     @Override
+    public void onLocationChanged(Location location) {
+        currentLocation = location;
+
+        requestSunDataRefresh = true;
+
+        Log.d(TAG, "New location: " + location.toString());
+    }
+
+    @Override
+    public void onStatusChanged(String provider, int status, Bundle extras) {
+        //
+    }
+
+    @Override
+    public void onProviderEnabled(String provider) {
+        selectBestLocationProvider();
+    }
+
+    @Override
+    public void onProviderDisabled(String provider) {
+        if (provider.equals(locationProvider)) {
+            selectBestLocationProvider();
+        }
+    }
+
+    private void selectBestLocationProvider() {
+        locationProvider = locationManager.getBestProvider(new Criteria(), true);
+    }
+
+    @Override
     public void onDestroy() {
         Log.d(TAG, toString() + "-onDestroy");
 
         serviceActive = false;
+
+        locationManager.removeUpdates(this);
+    }
+
+    @Override
+    public String getSunriseTime() {
+        return sunriseTime;
+    }
+
+    @Override
+    public String getSunsetTime() {
+        return sunsetTime;
     }
 
     /**

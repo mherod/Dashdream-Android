@@ -1,4 +1,4 @@
-package co.herod.dashdream.sunrisesunset;
+package co.herod.dashdream.rest;
 
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;

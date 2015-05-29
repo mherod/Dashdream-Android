@@ -16,9 +16,6 @@ public class StartActivity extends AppCompatActivity {
     @Override
     public void onStart() {
         super.onStart();
-
-        SunDataService.refreshSunData(this);
-
         final Intent intent = new Intent(Intent.ACTION_MAIN);
         intent.setClassName("com.android.systemui", "com.android.systemui.Somnambulator");
         startActivity(intent);
