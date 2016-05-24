@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        jar="/Users/matthewherod/Desktop/Dashdream/app/build/intermediates/exploded-aar/com.android.support/cardview-v7/21.0.3/jars/classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="00b0b7233e1ec64acebfac40d4983d32d4712426">
+        <dex dex="/Users/matthewherod/Desktop/Dashdream/app/build/intermediates/pre-dexed/debug/classes-61b13993a2e31e5b370cfb00f68ccf0676a0c305.jar" />
+    </item>
+    <item
+        jar="/Users/matthewherod/.gradle/caches/modules-2/files-2.1/org.parceler/parceler/0.2.13/ea3579621a7fe7083e7f7bb8be0d90c8751acbf9/parceler-0.2.13.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="ea3579621a7fe7083e7f7bb8be0d90c8751acbf9">
+        <dex dex="/Users/matthewherod/Desktop/Dashdream/app/build/intermediates/pre-dexed/debug/parceler-0.2.13-5651fdf59b6dd5eda44e345e388ba8a2a6ae672d.jar" />
+    </item>
+    <item
+        jar="/Users/matthewherod/Desktop/Dashdream/app/build/intermediates/exploded-aar/com.android.support/support-v4/22.1.1/jars/libs/internal_impl-22.1.1.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="9e070ad32b2700b0343e8e0cccc437733d91ba3a">
+        <dex dex="/Users/matthewherod/Desktop/Dashdream/app/build/intermediates/pre-dexed/debug/internal_impl-22.1.1-f52834fecbef04174531ecfafcb32df66fb1b094.jar" />
+    </item>
+    <item
+        jar="/Users/matthewherod/Desktop/Dashdream/app/build/intermediates/exploded-aar/com.android.support/recyclerview-v7/22.1.0/jars/classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="80434c45861675a57d690fba5ca31c3d55c89489">
+        <dex dex="/Users/matthewherod/Desktop/Dashdream/app/build/intermediates/pre-dexed/debug/classes-8fbb382fd6c7c57c84b028c3e1812440dc1811c7.jar" />
+    </item>
+    <item
+        jar="/Users/matthewherod/.gradle/caches/modules-2/files-2.1/com.google.code.gson/gson/2.3.1/ecb6e1f8e4b0e84c4b886c2f14a1500caf309757/gson-2.3.1.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="ecb6e1f8e4b0e84c4b886c2f14a1500caf309757">
+        <dex dex="/Users/matthewherod/Desktop/Dashdream/app/build/intermediates/pre-dexed/debug/gson-2.3.1-dbc67d69c3e985442a4bb9ceed499a22584feee4.jar" />
+    </item>
+    <item
+        jar="/Users/matthewherod/Desktop/Dashdream/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.1.1/jars/classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="a3ff3c506644c820eb2bdf06e8339f72be578551">
+        <dex dex="/Users/matthewherod/Desktop/Dashdream/app/build/intermediates/pre-dexed/debug/classes-a475cdeb784b932cc7eb30618d61f2161cf9dfc7.jar" />
+    </item>
+    <item
+        jar="/Users/matthewherod/.gradle/caches/modules-2/files-2.1/com.squareup.retrofit/retrofit/1.9.0/a681c044244d9fc375198588297a39ba78028423/retrofit-1.9.0.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="a681c044244d9fc375198588297a39ba78028423">
+        <dex dex="/Users/matthewherod/Desktop/Dashdream/app/build/intermediates/pre-dexed/debug/retrofit-1.9.0-241763d39386d3cd9ca4f274e003ca0d96e84981.jar" />
+    </item>
+    <item
+        jar="/Users/matthewherod/.gradle/caches/modules-2/files-2.1/com.jakewharton/butterknife/6.1.0/63735f48b82bcd24cdd33821342428252eb1ca5a/butterknife-6.1.0.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="63735f48b82bcd24cdd33821342428252eb1ca5a">
+        <dex dex="/Users/matthewherod/Desktop/Dashdream/app/build/intermediates/pre-dexed/debug/butterknife-6.1.0-a348d5a3409e8968e13ac219108852251ea782be.jar" />
+    </item>
+    <item
+        jar="/Users/matthewherod/.gradle/caches/modules-2/files-2.1/org.parceler/parceler-api/0.2.13/3bdd7267446c60215c6165a8129cc572ad407660/parceler-api-0.2.13.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="3bdd7267446c60215c6165a8129cc572ad407660">
+        <dex dex="/Users/matthewherod/Desktop/Dashdream/app/build/intermediates/pre-dexed/debug/parceler-api-0.2.13-746e601764be91e2a67b4a648db8733af96d074f.jar" />
+    </item>
+    <item
+        jar="/Users/matthewherod/Desktop/Dashdream/app/build/intermediates/exploded-aar/com.android.support/support-v4/22.1.1/jars/classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="c95ba8152923e4872e86a82cfcba9a51c0214328">
+        <dex dex="/Users/matthewherod/Desktop/Dashdream/app/build/intermediates/pre-dexed/debug/classes-6e78e53223a68e3e395b877c7b84e9a7943d798b.jar" />
+    </item>
+    <item
+        jar="/Users/matthewherod/Desktop/Dashdream/app/build/intermediates/exploded-aar/com.android.support/leanback-v17/22.1.0/jars/classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="09fbf24c33d41db13fb97f65f7be73fc368261fa">
+        <dex dex="/Users/matthewherod/Desktop/Dashdream/app/build/intermediates/pre-dexed/debug/classes-e78672a431f768eaffe5bfc02c5aa1cbb09238de.jar" />
+    </item>
+    <item
+        jar="/Users/matthewherod/android-sdk-macosx/extras/android/m2repository/com/android/support/support-annotations/22.1.1/support-annotations-22.1.1.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="01d051a6bfb1218b1db2d3a5af0480ac2c25c42a">
+        <dex dex="/Users/matthewherod/Desktop/Dashdream/app/build/intermediates/pre-dexed/debug/support-annotations-22.1.1-fd88267c4bdb5dd4b359acda465ae00b7fbdcca2.jar" />
+    </item>
+
+</items>
